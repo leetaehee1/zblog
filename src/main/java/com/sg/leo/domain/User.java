@@ -2,6 +2,8 @@ package com.sg.leo.domain;
 
 import java.sql.Timestamp;
 
+import org.hibernate.annotations.CreationTimestamp;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -15,19 +17,15 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import org.hibernate.annotations.CreationTimestamp;
-
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
 @Entity
-@Table(name="USERS")
-
+@Table(name="ZBLOGUSERS")
 public class User {
-	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
 	
 	@Column(nullable=false, length=50, unique=true)
@@ -43,6 +41,5 @@ public class User {
 	private RoleType role;
 	
 	@CreationTimestamp
-	private Timestamp createDate;
+	private Timestamp createData;
 }
-   
