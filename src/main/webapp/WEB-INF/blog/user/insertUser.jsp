@@ -18,7 +18,7 @@
 		</div>
 		<div class="mb-3">
 			<label for="pwd">Password:</label> <input type="password"
-				class="form-control" id="pwd" placeholder="Enter password"
+				class="form-control" id="password v" placeholder="Enter password"
 				name="pswd">
 		</div>
 		<button id="btn-save" class="btn btn-primary">회원가입</button>

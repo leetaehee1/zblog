@@ -21,8 +21,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.sg.leo.domain.RoleType;
 import com.sg.leo.domain.User;
+import com.sg.leo.dto.ResponseDTO;
 import com.sg.leo.exception.ZBlogException;
 import com.sg.leo.repository.UserRepository;
+import com.sg.leo.service.UserService;
 
 @Controller
 public class UserController {
@@ -59,5 +61,14 @@ public class UserController {
 	@GetMapping("/auth/insertUser")
 	public String insertUser() {
 		return "user/insertUser";
+	}
+	
+	@Autowired
+	private UserService userService;
+	
+	@PostMapping("/auth/insertUser")
+	public @ResponseBody ResponseDTO<?> insertUsers(@RequestBody User user){
+		userService.insertUser(user);
+		return new ResponseDTO<>(HttpStatus.OK.value(), user.getUsername() + "님 회원가입 성공");
 	}
 }

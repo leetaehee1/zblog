@@ -1,26 +1,39 @@
-function usersubmit() {
-	alert("회원가입 요청됨");
-	
-	let newuser={
-		username: document.getElementById("username").value,
-		password: document.getElementById("pwd").value,
-		email: document.getElementById("email").value
-	}
-	
-	console.log(newuser);
-	
-	// POST localhost:8080/user JSON(newuser)
-	var ajaxrequest = new XMLHttpRequest();
-	ajaxrequest.open('POST', '/user');
-	ajaxrequest.onreadystatechange = function() {
-		if(ajaxrequest.readyState == 4) {
-			response = ajaxrequest.responseText;
-			alert(response);
+
+
+let userObject = {
+    init: function(){
+        let _this = this;
+
+        $("#btn-save").on("click",() =>{
+            _this.insertUser();
+        });
+    },
+
+   insertUser: function() {
+		alert("회원가입 요청됨");
+		// 회원정보 추출
+		let user = {
+			username: $("#username").val(),
+			password: $("#password").val(),
+			email: $("#email").val()
 		}
+		
+		console.log(user);
+
+		$.ajax({
+			type: "POST",
+			// 시험으로는 /user로 함
+			url: "/auth/insertUser",
+			data: JSON.stringify(user),
+			contentType: "application/json; charset=utf-8"
+		}).done(function(response) {
+			console.log(response);
+			alert(response);
+			location = "/";
+		}).fail(function(error) {
+			alert("!/js/user.js에서 에러발생: " + error);
+		});
 	}
-	ajaxrequest.setRequestHeader("content-type", "application/json");
-	ajaxrequest.send(JSON.stringify(newuser));
 }
 
-let btnsave = document.getElementById("btn-save");
-btnsave.onclick = usersubmit;
+userObject.init();

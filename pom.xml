@@ -52,7 +52,6 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-		
 			
 	<!-- https://mvnrepository.com/artifact/org.apache.tomcat/tomcat-jasper -->
 	<dependency>
@@ -60,6 +59,13 @@
 		<artifactId>tomcat-embed-jasper</artifactId>
 	</dependency>
 		
+		<!-- https://mvnrepository.com/artifact/org.webjars.bower/jquery -->
+	<dependency>
+	    <groupId>org.webjars.bower</groupId>
+	    <artifactId>jquery</artifactId>
+	    <version>3.6.0</version>
+	</dependency>
+	
 	</dependencies>
 
 	<build>
