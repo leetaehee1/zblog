@@ -4,16 +4,10 @@
 <%@ include file="../layout/zblogheader.jsp" %>
 
 <div class="container mt-3">
-  <h2>회원가입 페이지, 환영합니다</h2>
 	<form>
 		<div class="mb-3 mt-3">
 			<label for="username">Username:</label> <input type="text"
 				class="form-control" id="username" placeholder="Enter username"
-				name="email">
-		</div>
-		<div class="mb-3 mt-3">
-			<label for="email">Email:</label> <input type="email"
-				class="form-control" id="email" placeholder="Enter email"
 				name="email">
 		</div>
 		<div class="mb-3">
@@ -21,10 +15,10 @@
 				class="form-control" id="password   " placeholder="Enter password"
 				name="pswd">
 		</div>
-		<button id="btn-save" class="btn btn-primary">회원가입</button>
+		<button id="btn-login" type="submit" class="btn btn-primary">로그인</button>
 	</form>
 </div>
 
-<script src="/js/user.js">
+<script src="/js/login.js">
 </script>
 <%@ include file="../layout/zblogfooter.jsp" %>

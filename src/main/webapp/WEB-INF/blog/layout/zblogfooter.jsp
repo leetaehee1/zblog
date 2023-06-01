@@ -3,7 +3,7 @@
     
 <div class="mt-5 p-4 text-center">
 <p>Created by AI software department</p>
-<p>연락처 031-740-1371 신구대학교 AI과 </p>
+<p>연락처 031-740-1371 이태희 신구대학교 AI과 </p>
 </div>
 
 </body>

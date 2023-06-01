@@ -1,6 +1,8 @@
 
 package com.sg.leo.service;
 
+import java.util.function.Supplier;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -18,5 +20,20 @@ public class UserService {
 	public void insertUser(User user) {
 		user.setRole(RoleType.USER);
 		userRepository.save(user);
+	}
+	
+	@Transactional(readOnly=true)
+	public User getUser(String username) {
+		// 검색결과가 없을때 빈 user 객체 반환
+		User findUser = userRepository.findByUsername(username).orElseGet(
+				new Supplier<User>() {
+					@Override
+					public User get() {
+						return new User();
+					}
+				});
+		// 람다식
+		// User findUser = userRepository.findByUsername(username).orElseGet(() ->{return new User();});
+		return findUser;
 	}
 }

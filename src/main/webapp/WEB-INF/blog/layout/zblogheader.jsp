@@ -17,15 +17,15 @@
 
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
   <div class="container-fluid">
-    <a class="navbar-brand" href="/">Main처음화면</a>
+    <a class="navbar-brand" href="/">게시판처음화면</a>
 
     <div class="collapse navbar-collapse" id="mynavbar">
       <ul class="navbar-nav me-auto">
         <li class="nav-item">
-          <a class="nav-link" href="/auth/login">Link로그인</a>
+          <a class="nav-link" href="/auth/login">로그인</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/auth/insertUser">Link회원가입</a>
+          <a class="nav-link" href="/auth/insertUser">회원가입</a>
         </li>
 
       </ul>
