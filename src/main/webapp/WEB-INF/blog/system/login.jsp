@@ -8,12 +8,12 @@
 		<div class="mb-3 mt-3">
 			<label for="username">Username:</label> <input type="text"
 				class="form-control" id="username" placeholder="Enter username"
-				name="email">
+				name="username">
 		</div>
 		<div class="mb-3">
 			<label for="pwd">Password:</label> <input type="password"
-				class="form-control" id="password   " placeholder="Enter password"
-				name="pswd">
+				class="form-control" id="password" placeholder="Enter password"
+				name="pwd">
 		</div>
 		<button id="btn-login" type="submit" class="btn btn-primary">로그인</button>
 	</form>

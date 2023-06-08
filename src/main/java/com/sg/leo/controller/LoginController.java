@@ -23,6 +23,11 @@ public class LoginController {
 		return "system/login";
 	}
 	
+	@GetMapping("/auth/logout")
+	public String bloglogout(HttpSession session) {
+		session.invalidate();
+		return "redirect:/";
+	}
 	// 로그인 인증처리
 
 	@Autowired
